@@ -152,7 +152,7 @@ function showModal() {
     // 요기부터 ~~~  ===================================================
   }) .then((result) => {
     if (result.value) {
-      window.open("https://blog.naver.com/taehwa10404");
+      window.open("https://blog.naver.com/taehwa10404/223041041055");
     }
     // ===================================== 요기까진 , 지워도 되는 내용들
       
