@@ -83,7 +83,7 @@ header > .nav {
     transition: 0.3s;
 }
 .nav li:not(:last-child) { margin-right: 20px; }
-.nav a, .nav i { 
+.nav a, .nav i, .logo h1 { 
     cursor: pointer;
 }
 
