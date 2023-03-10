@@ -1,0 +1,205 @@
+/*
+
+CSS 스타일 순서
+    1. 모든요소 (웹폰트 포함)
+    2. 상단 (헤더, 검색창, 버튼들)
+    3. iframe, 너비/높이
+    4. 하단 (푸터)
+    5. 모달화면의 인풋태그들 
+
+====================================================>>>
+*/
+
+
+
+
+
+/* 
+
+    모든요소에 적용되는 내용 
+    . 폰트 : 배달의 민족 주아체(BMJUA) 사용
+    =======================>
+
+*/
+
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    color: black; 
+
+    scroll-behavior: smooth;
+    cursor: default;
+
+    text-decoration: none;
+    list-style: none;
+
+    font-family: BMJUA;
+}
+
+
+
+
+
+/* 
+
+    상단부분 (헤더, 검색창, 검색버튼)
+    =======================>
+
+*/
+header {
+    
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header > .logo h1 {
+    flex: left;
+    transition: 0.3s;
+    transform: translateY(0px);
+}
+header > .logo:hover h1 {
+    color: blue;
+    transform: translateY(-1px);
+}
+
+header > .nav {
+    flex: right;
+
+    line-height: 40px;
+}
+
+.nav li { 
+    position: relative; 
+    display: inline; 
+    font-size: 18px; 
+    transition: 0.3s;
+}
+.nav li:not(:last-child) { margin-right: 20px; }
+.nav a, .nav i { 
+    cursor: pointer;
+}
+
+.nav i { font-size:  16px; }
+.nav li:hover i, .nav li:hover a { color: blue; }
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(222, 184, 135, 0.5);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.search { 
+    padding: 10px;
+    display: flex;
+    
+}
+.search > input[type="button"] { 
+    height: 25px;
+    cursor: pointer;
+    width: 10%;
+    margin-right: 10px;
+}
+.search > input[type="search"] { 
+    padding-left: 10px;
+    cursor: text; 
+    height: 25px;
+    width: 90%;
+    
+}
+
+
+
+
+/* 
+
+    아이프레임 표시부분
+    =======================>
+
+*/
+iframe {
+    width:100%; 
+    height: 100vh;
+    border: none;
+}
+
+
+
+
+/* 
+
+    하단부분 (푸터)
+    =======================>
+
+*/
+
+footer h4, footer p { color:  grey; }
+footer { 
+    display: flex; 
+    height: 100px; 
+
+    align-items: center; 
+    justify-content: center;    
+}
+footer .ftrWrap {
+    display: inline;
+    text-align: center;
+}
+
+
+
+
+
+
+/* 
+
+    모달화면의 인풋태그들 
+    =======================>
+
+*/
+
+#showInterval {
+    position: relative;
+    top: -1px;
+
+    max-width: 10px;
+    height: 15px;
+    
+    border: none;
+    outline: none; 
+    
+    font-size: 17px; 
+    text-align: right;
+}
+
+#inputPath {
+    cursor: text; 
+
+    width: 100%; 
+    height: 25px; 
+    
+    border: none; 
+    outline: none; 
+    border-bottom: 1px solid skyblue; 
+    
+    padding-left: 5px; 
+    text-align: center;
+}

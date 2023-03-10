@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 웹문서 정보 -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>아이프레임</title>
+
+<!-- 파비콘 URL : https://formito.com/tools/favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%237d6ee7%22></rect><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2286%22>🐣</text></svg>" />
+
+<!-- 
+    폰트어썸 URL : https://fontawesome.com/search?o=r&m=free
+    폰트어썸 CDN : https://cdnjs.com/libraries/font-awesome
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- sweetAlert CDN : https://sweetalert.js.org/guides/ -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<!-- CSS, JS -->
+<link rel="stylesheet" href="./iFrame.css">
+<!-- JS로 요소들을 찾기위해서 HTML 로딩후 JS 파일을 불러오게했음 -->
+
+
+</head>
+<body>
+
+
+<!-- 헤더부분 -->
+<header>
+    <div class="logo">
+    <h1>🐣 아이프레임</h1>
+    </div>
+    <div class="nav">
+    <ul>
+        <!-- 첫번째 버튼 -->
+        <li>
+            <a onclick="showModal();">
+            <i class="fa-solid fa-circle-info"></i>
+            사용하는 방법
+            </a>
+            </li>
+        
+        <!-- 두번째 버튼 -->
+        <li>
+            <a onclick="showOption();">
+            <i class="fa-solid fa-gear"></i>
+            사용자 설정
+            </a>
+            </li>
+    </ul>
+    </div>
+</header>
+
+<!-- 검색부분 -->
+<div class="search">
+    <input type="button" id="toggleBtn" onclick="toggleTimer(this);" value="🧊 얼음">
+    <input
+    id="fileSearch"
+    type="search"
+    placeholder="이 공간에 ★ html 파일의 확장자를 제외한 이름만★ 입력하고 엔터를 눌러주세요 😀" 
+    onkeypress="if (event.keyCode==13) { searchKeyword(this); }"
+    autofocus
+    >
+</div>
+<hr>
+
+
+<!-- html 표시하는 부분 -->
+<iframe id="getFrame"></iframe>
+
+
+
+
+<!-- 푸터 부분 -->
+<footer>
+    <div class="ftrWrap">
+
+        <h4>도움받았어요 :)</h1>
+        <br>
+                
+        <p>
+            라이브러리: sweetAlert  |  
+            폰트: BMJUA (배달의 민족 주아체)  |  
+            파비콘: formito  |  
+            아이콘: 폰트어썸
+
+        </p>
+        
+    </div>
+</footer>
+</body>
+
+<script src="./iFrame.js"></script>
+</html>
