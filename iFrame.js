@@ -15,7 +15,7 @@
   [4] dirPath       : 파일이름을 입력받았을때, 해당 파일이 있는 상대경로
 
 
-  🔍 메소드 : 9개
+  🔍 메소드 : 10개
 
   -> 전역변수를 관리하는 메소드 (변경, 비교)
   [1] intervalDelayChange
@@ -31,6 +31,12 @@
   -> `사용하는 방법`, `사용자 설정` 버튼을 눌렀을때 모달창을 띄워주는 메소드
   [8] showModal
   [9] showOption
+  
+-> 🐣 아이프레임 ( 🥚 페이지 새로고침 ) 버튼 클릭시 페이지 새로고침 ( 타이머 동작 X )
+  [10] pageReload
+
+
+
 
 */
 
@@ -83,8 +89,6 @@ function dirPathShow(getDir) {
   getDir.value = "";
   
 }
-
-
 
 
 
@@ -187,3 +191,39 @@ function showOption() {
 }
 
 
+
+
+
+
+
+
+
+
+// ======================================================>>>>
+// 🐣 아이프레임 ( 🥚 페이지 새로고침 ) 버튼 클릭시 페이지 새로고침 ( 타이머 동작 X )
+
+function pageReload() {
+
+  /* iframe src 속성에  경로 + 검색창에 입력된 내용 + .html 내용을 할당해줌 */
+  if (TOGGLE_BUTTON.value == "🧊 얼음") {
+  SHOW_HTML.src =  dirPath + FILE_NAME.value + ".html";
+  
+
+  /* 만약,  이미 새로고침되고있는 상태라면 ? : 수동 새로고침 불가함 안내하기 */
+  } else {
+
+    Swal.fire({
+      icon: 'error',
+      title: '수동 새로고침 불가',
+      html: `
+        이런, 이미 ${intervalDelay}초 단위로 자동 새로고침이 되고있네요 <br>
+        💡 해결방법 : 버튼이 <mark>" 🧊 얼음 " 상태일때</mark> 다시 시도
+        `,
+      
+      confirmButtonText: '확인'
+
+    })
+  }
+
+
+}
