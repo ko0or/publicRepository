@@ -217,7 +217,7 @@ function pageReload() {
       title: '수동 새로고침 불가',
       html: `
         이런, 이미 ${intervalDelay}초 단위로 자동 새로고침이 되고있네요 <br>
-        💡 해결방법 : 버튼이 <mark>" 🧊 얼음 " 상태일때</mark> 다시 시도
+        💡 해결방법 : 버튼이 <mark>" 🧊 얼음 " 상태일때</mark> 다시 시도해주세요
         `,
       
       confirmButtonText: '확인'
